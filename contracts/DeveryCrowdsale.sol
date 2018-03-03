@@ -475,13 +475,13 @@ contract DeveryCrowdsale is Owned {
         }
     }
 
-    function roundUp(uint a) internal pure returns (uint) {
-        uint multiple = 10**uint(TOKEN_DECIMALS);
-        uint remainder = a % multiple;
-        if (remainder > 0) {
-            return a.add(multiple).sub(remainder);
-        }
-    }
+    // function roundUp(uint a) internal pure returns (uint) {
+    //     uint multiple = 10**uint(TOKEN_DECIMALS);
+    //     uint remainder = a % multiple;
+    //     if (remainder > 0) {
+    //         return a.add(multiple).sub(remainder);
+    //     }
+    // }
     function finalise() public onlyOwner {
         require(!finalised);
         require(now > endDate || contributedEth >= capEth());
